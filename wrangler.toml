@@ -1,0 +1,8 @@
+name = "hustle-brand"
+compatibility_date = "2025-03-01"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "HUSTLE_DATA"
+id = "c1d85123d550420ab24dad0f7d2d582c"
+preview_id = "35f9bacf12f543028c37902bedb04881"

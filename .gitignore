@@ -1,0 +1,10 @@
+.DS_Store
+.wrangler/
+node_modules/
+.vercel/
+.env
+.env.*
+*.log
+.idea/
+.vscode/
+dist/

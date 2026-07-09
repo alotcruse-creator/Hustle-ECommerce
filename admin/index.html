@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>HUSTLE Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <!-- LOGIN -->
+    <div id="login-screen" class="login-screen">
+      <div class="login-card">
+        <div class="login-logo">HU<span>$</span>TLE</div>
+        <p class="login-sub">Developer / Admin Access</p>
+        <form id="login-form">
+          <label>
+            Password
+            <input type="password" id="password" autocomplete="current-password" required autofocus />
+          </label>
+          <button type="submit" class="btn btn-gold">Sign In</button>
+          <p id="login-error" class="error hidden"></p>
+        </form>
+        <p class="login-hint">Edit products, prices, Shopee links &amp; page copy.</p>
+      </div>
+    </div>
+
+    <!-- APP -->
+    <div id="app" class="app hidden">
+      <aside class="sidebar">
+        <div class="sidebar-brand">HU<span>$</span>TLE <small>Admin</small></div>
+        <nav>
+          <button type="button" class="nav-item active" data-view="products">Products</button>
+          <button type="button" class="nav-item" data-view="pricing">Pricing &amp; Bundle</button>
+          <button type="button" class="nav-item" data-view="content">Page Content</button>
+          <button type="button" class="nav-item" data-view="sizechart">Size Chart</button>
+          <button type="button" class="nav-item" data-view="links">Shopee Links</button>
+        </nav>
+        <div class="sidebar-footer">
+          <a href="/" target="_blank" rel="noopener">View site ↗</a>
+          <button type="button" id="btn-seed" class="linkish">Reset to defaults</button>
+          <button type="button" id="btn-logout" class="linkish danger">Log out</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <h1 id="view-title">Products</h1>
+          <div class="topbar-actions">
+            <span id="save-status" class="status"></span>
+            <button type="button" id="btn-add-product" class="btn btn-gold">+ Add Product</button>
+          </div>
+        </header>
+
+        <!-- PRODUCTS -->
+        <section id="view-products" class="view">
+          <p class="view-desc">
+            Add clothing, edit names, images, details, sizes, and visibility. Prices can also be edited here or under Pricing.
+          </p>
+          <div id="product-list" class="product-list"></div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="view-pricing" class="view hidden">
+          <p class="view-desc">Quick price editor for all products + the Black &amp; White pair deal.</p>
+          <div class="card">
+            <h2>Product prices</h2>
+            <div id="price-table" class="price-table"></div>
+          </div>
+          <div class="card">
+            <h2>Bundle deal</h2>
+            <div class="form-grid">
+              <label class="check">
+                <input type="checkbox" id="bundle-enabled" /> Enable bundle on site
+              </label>
+              <label>Title <input id="bundle-title" type="text" /></label>
+              <label>Subtitle <input id="bundle-subtitle" type="text" /></label>
+              <label>Bundle price (RM) <input id="bundle-price" type="number" step="0.01" min="0" /></label>
+              <label>Normal price (RM) <input id="bundle-compare" type="number" step="0.01" min="0" /></label>
+              <label>% Off <input id="bundle-percent" type="number" step="1" min="0" /></label>
+              <label>You save (RM) <input id="bundle-save" type="number" step="0.01" min="0" /></label>
+              <label class="full">Shopee bundle URL <input id="bundle-shopee" type="url" /></label>
+            </div>
+            <button type="button" class="btn btn-gold" id="btn-save-bundle">Save pricing &amp; bundle</button>
+          </div>
+        </section>
+
+        <!-- CONTENT -->
+        <section id="view-content" class="view hidden">
+          <p class="view-desc">Edit key marketing copy on the landing and about pages.</p>
+          <div class="card">
+            <h2>Landing hero</h2>
+            <div class="form-grid">
+              <label class="full">Hero tag <input id="c-heroTag" type="text" /></label>
+              <label>Hero title <input id="c-heroTitle" type="text" /></label>
+              <label>Hero subtitle (gold line) <input id="c-heroSubtitle" type="text" /></label>
+              <label class="full">Hero body <textarea id="c-heroBody" rows="3"></textarea></label>
+            </div>
+          </div>
+          <div class="card">
+            <h2>About page</h2>
+            <div class="form-grid">
+              <label class="full">About title <input id="c-aboutTitle" type="text" /></label>
+              <label class="full">About body <textarea id="c-aboutBody" rows="5"></textarea></label>
+              <label class="full">Manifesto <input id="c-manifesto" type="text" /></label>
+            </div>
+            <button type="button" class="btn btn-gold" id="btn-save-content">Save content</button>
+          </div>
+        </section>
+
+        <!-- SIZE CHART -->
+        <section id="view-sizechart" class="view hidden">
+          <p class="view-desc">Update the shop size chart matrix (shown in inches on the shop page).</p>
+          <div class="card">
+            <div id="size-rows"></div>
+            <button type="button" class="btn btn-ghost" id="btn-add-size">+ Add size row</button>
+            <label class="full" style="margin-top: 1rem; display: block">
+              Note under chart
+              <input id="size-note" type="text" />
+            </label>
+            <button type="button" class="btn btn-gold" id="btn-save-size" style="margin-top: 1rem">
+              Save size chart
+            </button>
+          </div>
+        </section>
+
+        <!-- LINKS -->
+        <section id="view-links" class="view hidden">
+          <p class="view-desc">Default Shopee store URL used by site CTAs. Per-product links are set on each product.</p>
+          <div class="card">
+            <div class="form-grid">
+              <label class="full">Brand name <input id="store-brand" type="text" /></label>
+              <label class="full">Tagline <input id="store-tagline" type="text" /></label>
+              <label class="full">Main Shopee store URL <input id="store-shopee" type="url" /></label>
+            </div>
+            <button type="button" class="btn btn-gold" id="btn-save-links">Save store links</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel">
+        <header class="modal-head">
+          <h2 id="modal-title">Edit product</h2>
+          <button type="button" class="icon-btn" data-close aria-label="Close">✕</button>
+        </header>
+        <form id="product-form" class="modal-body">
+          <input type="hidden" id="p-id" />
+          <div class="form-grid">
+            <label>Name * <input id="p-name" required type="text" placeholder="Oversized Tee" /></label>
+            <label>Colour <input id="p-color" type="text" placeholder="Black" /></label>
+            <label>Price (RM) * <input id="p-price" required type="number" step="0.01" min="0" /></label>
+            <label>Compare-at price <input id="p-compare" type="number" step="0.01" min="0" placeholder="Optional" /></label>
+            <label class="full">Description <textarea id="p-desc" rows="3"></textarea></label>
+            <label class="full">
+              Product details (one per line)
+              <textarea id="p-details" rows="6" placeholder="230GSM&#10;100% Cotton"></textarea>
+            </label>
+            <label>Sizes (comma-separated) <input id="p-sizes" type="text" placeholder="S, M, L, XL" /></label>
+            <label>Badge <input id="p-badge" type="text" placeholder="Bestseller" /></label>
+            <label class="full">
+              Image URLs or paths (one per line)
+              <textarea
+                id="p-images"
+                rows="4"
+                placeholder="assets/products/product-main.jpg&#10;https://..."
+              ></textarea>
+            </label>
+            <label class="full">Shopee product URL <input id="p-shopee" type="url" /></label>
+            <label>Category <input id="p-category" type="text" placeholder="tees" /></label>
+            <label>Sort order <input id="p-sort" type="number" step="1" /></label>
+            <label class="check"><input type="checkbox" id="p-featured" /> Featured on homepage</label>
+            <label class="check"><input type="checkbox" id="p-active" checked /> Active (visible on site)</label>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn-danger" id="btn-delete-product">Delete</button>
+            <div class="spacer"></div>
+            <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+            <button type="submit" class="btn btn-gold">Save product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

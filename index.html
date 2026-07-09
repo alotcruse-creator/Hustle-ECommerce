@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HUSTLE — Premium gym clothing built for the grind, styled for everyday. Oversized tees in Black & White. Shop on Shopee Malaysia."
+    />
+    <title>HUSTLE — Hustle Hard. Live Easy.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav" role="banner">
+      <div class="nav-inner">
+        <a href="index.html" class="logo" aria-label="HUSTLE Home">
+          HU<span class="dollar">$</span>TLE
+        </a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="shop.html" data-page="shop.html">Shop</a>
+          <a href="about.html" data-page="about.html">About</a>
+          <a href="shop.html" class="nav-cta">Shop Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img
+          src="assets/images/hero-duo.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="container hero-content">
+        <p class="hero-tag" data-content="heroTag">New Brand. New Mentality.</p>
+        <h1>
+          <span data-content="heroTitle">HUSTLE HARD.</span><br />
+          <span class="line2" data-content="heroSubtitle">LIVE EASY.</span>
+        </h1>
+        <p class="hero-sub" data-content="heroBody">
+          Built for more than just the gym. Premium oversized tees engineered for
+          the grind — and the lifestyle that follows.
+        </p>
+        <div class="hero-actions">
+          <a href="shop.html" class="btn btn-primary btn-lg">Shop Collection</a>
+          <a
+            href="#"
+            class="btn btn-outline btn-lg"
+            data-shopee="store"
+            >Buy on Shopee MY</a
+          >
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>230GSM</strong>
+            <span>Heavyweight Cotton</span>
+          </div>
+          <div class="hero-stat">
+            <strong data-stat="price">RM39.99</strong>
+            <span>Per Tee</span>
+          </div>
+          <div class="hero-stat">
+            <strong data-stat="bundle">10% OFF</strong>
+            <span>Black + White Pair</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section values">
+      <div class="container">
+        <div class="values-grid">
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">◎</div>
+            <h3>FOCUS</h3>
+            <p>On your goals. Every rep, every day, every decision.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">⚡</div>
+            <h3>ENERGY</h3>
+            <p>In your grind. Fuel the work that nobody sees.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">◈</div>
+            <h3>AMBITION</h3>
+            <p>Without limits. The only ceiling is the one you accept.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">♔</div>
+            <h3>LEGACY</h3>
+            <p>In the making. Build something that outlasts the set.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="section">
+      <div class="container">
+        <div class="featured-header reveal">
+          <div>
+            <p class="section-label">Featured Collection</p>
+            <h2 class="section-title">OVERSIZED TEE</h2>
+            <p class="muted">Built for the gym. Styled for everyday.</p>
+          </div>
+          <a href="shop.html" class="btn btn-outline">View All Products</a>
+        </div>
+
+        <div class="featured-grid" id="featured-products">
+          <!-- Filled by js/home-app.js from /api/products -->
+          <article class="product-card"><div class="product-card-body"><p class="muted">Loading collection…</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT SPECS STRIP -->
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="specs-band reveal">
+          <img
+            src="assets/images/product-flatlay.jpg"
+            alt="HUSTLE black and white oversized tees product flatlay"
+            width="800"
+            height="450"
+            loading="lazy"
+          />
+          <div class="specs-band-copy">
+            <p class="section-label">Why HUSTLE</p>
+            <h2 class="section-title" style="font-size: 2.5rem">PREMIUM BUILD</h2>
+            <ul class="details-list" style="margin: 0">
+              <li>230GSM (6.78 oz/yd²) heavyweight fabric</li>
+              <li>100% Ring Spun Cotton — preshrunk</li>
+              <li>Loose fit cutting for max mobility</li>
+              <li>2.5cm rib collar · double needle hems</li>
+              <li>Soft, breathable & built for all-day wear</li>
+              <li>Unisex design · Sizes S – XL</li>
+            </ul>
+            <a href="shop.html" class="btn btn-outline" style="margin-top: 1.25rem">Full Specs & Size Chart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="cta-banner-bg" aria-hidden="true">
+        <img
+          src="assets/images/lifestyle-rest.jpg"
+          alt=""
+          width="1600"
+          height="900"
+          loading="lazy"
+        />
+      </div>
+      <div class="container cta-banner-content reveal">
+        <p class="section-label">Checkout on Shopee Malaysia</p>
+        <h2>SECURE. FAST. LOCAL.</h2>
+        <p>
+          We don’t process payments on this site. Every order goes straight to our
+          official Shopee MY store — trusted checkout, buyer protection, and
+          nationwide delivery.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center">
+          <a href="#" class="btn btn-shopee btn-lg" data-shopee="store">Open Shopee Store</a>
+          <a href="shop.html" class="btn btn-outline btn-lg">Browse Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">HU<span class="dollar">$</span>TLE</a>
+            <p>
+              More than clothes. It’s a lifestyle.<br />
+              Hustle Hard. Live Easy.
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <ul class="footer-links">
+              <li><a href="shop.html">Oversized Tee Black</a></li>
+              <li><a href="shop.html">Oversized Tee White</a></li>
+              <li><a href="shop.html">Black + White Bundle</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Shop</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#" data-shopee="store" class="footer-shopee">Shopee Malaysia ↗</a>
+              </li>
+              <li><span class="muted">Local brand · MY</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year></span> HUSTLE. All rights reserved.</span>
+          <span>Thank you for supporting our local brand.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/home-app.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

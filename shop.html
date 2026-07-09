@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop HUSTLE Oversized Tee — 230GSM pure cotton, Black & White. RM39.99 each or 10% off pair bundle. Buy on Shopee Malaysia."
+    />
+    <title>Shop — HUSTLE Oversized Tee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="nav" role="banner">
+      <div class="nav-inner">
+        <a href="index.html" class="logo" aria-label="HUSTLE Home">
+          HU<span class="dollar">$</span>TLE
+        </a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="shop.html" data-page="shop.html">Shop</a>
+          <a href="about.html" data-page="about.html">About</a>
+          <a href="#" class="nav-cta" data-shopee="store">Shopee MY</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Official Collection</p>
+        <h1>THE SHOP</h1>
+        <p>Premium oversized tees. Checkout securely on Shopee Malaysia.</p>
+      </div>
+    </section>
+
+    <!-- PRODUCT CATALOG -->
+    <div class="container" style="padding-top: 3rem">
+      <div id="products-grid" class="shop-grid" style="margin-bottom: 3rem">
+        <p class="muted">Loading products…</p>
+      </div>
+    </div>
+
+    <div class="container" id="product-detail-root">
+      <!-- Selected product detail filled by shop-app.js -->
+    </div>
+
+    <!-- SIZE CHART -->
+    <section class="size-chart-section" id="size-chart">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2rem" class="reveal">
+          <p class="section-label">Fit Guide</p>
+          <h2 class="section-title">SIZE CHART</h2>
+          <p class="muted">230GSM 100% Cotton · Loose Fit · Measurements in inches</p>
+        </div>
+        <div class="size-chart-wrap reveal">
+          <table class="size-chart">
+            <thead>
+              <tr>
+                <th>SIZE</th>
+                <th>CHEST</th>
+                <th>LENGTH</th>
+                <th>SLEEVE</th>
+              </tr>
+            </thead>
+            <tbody id="size-chart-body"></tbody>
+          </table>
+        </div>
+        <p class="size-chart-note" id="size-chart-note"></p>
+      </div>
+    </section>
+
+    <!-- Lifestyle strip -->
+    <section class="section">
+      <div class="container">
+        <div class="featured-header reveal">
+          <div>
+            <p class="section-label">In the Wild</p>
+            <h2 class="section-title">FROM WORKOUT TO WEEKEND</h2>
+          </div>
+        </div>
+        <div class="shop-grid">
+          <article class="product-card reveal">
+            <div class="product-card-img">
+              <img
+                src="assets/images/hero-male-black.jpg"
+                alt="Training in HUSTLE black oversized tee"
+                loading="lazy"
+                width="600"
+                height="800"
+              />
+            </div>
+            <div class="product-card-body">
+              <h3>TRAIN HARD</h3>
+              <p class="product-meta">Heavyweight cotton that holds up under pressure.</p>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-card-img">
+              <img
+                src="assets/images/lifestyle-female-white.jpg"
+                alt="Lifestyle wear HUSTLE white oversized tee"
+                loading="lazy"
+                width="600"
+                height="800"
+              />
+            </div>
+            <div class="product-card-body">
+              <h3>MOVE FREE</h3>
+              <p class="product-meta">Oversized cut. Max comfort. Zero restriction.</p>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <div class="product-card-img">
+              <img
+                src="assets/images/lifestyle-rest.jpg"
+                alt="Post-workout in HUSTLE oversized tee"
+                loading="lazy"
+                width="600"
+                height="800"
+              />
+            </div>
+            <div class="product-card-body">
+              <h3>LIVE EASY</h3>
+              <p class="product-meta">From the last set to the late night.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo">HU<span class="dollar">$</span>TLE</a>
+            <p>More than clothes. It’s a lifestyle.<br />Hustle Hard. Live Easy.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <ul class="footer-links">
+              <li><a href="shop.html">Oversized Tee Black</a></li>
+              <li><a href="shop.html">Oversized Tee White</a></li>
+              <li><a href="shop.html#size-chart">Size Chart</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Shop</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#" data-shopee="store" class="footer-shopee">Shopee Malaysia ↗</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year></span> HUSTLE. All rights reserved.</span>
+          <span>Thank you for supporting our local brand.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/shop-app.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
