@@ -1341,8 +1341,24 @@ button {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.55rem 1rem;
-  position: relative;
-  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Push fixed nav below announcement */
+body:has(.announcement-bar) .nav {
+  top: 36px;
+}
+
+body:has(.announcement-bar) {
+  --nav-h: 108px; /* 36 announcement + 72 nav */
 }
 
 .announcement-bar a {
