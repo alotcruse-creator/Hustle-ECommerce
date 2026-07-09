@@ -1326,3 +1326,482 @@ button {
     width: 100%;
   }
 }
+
+/* ============================================================
+   GYMSHARK-STYLE PRODUCT CARDS
+   Model-first image + hover swap + clean price grid
+   ============================================================ */
+
+.announcement-bar {
+  background: var(--gold);
+  color: var(--black);
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  position: relative;
+  z-index: 1001;
+}
+
+.announcement-bar a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Shop collection header */
+.shop-header {
+  padding: calc(var(--nav-h) + 2.5rem) 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-primary);
+}
+
+.shop-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.shop-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.shop-header p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  max-width: 420px;
+  font-size: 0.95rem;
+}
+
+.shop-count {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.shop-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.shop-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  cursor: pointer;
+  background: transparent;
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* Product grid — Gymshark-like multi column */
+.gs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem 1rem;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 1100px) {
+  .gs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .gs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.65rem;
+  }
+}
+
+/* Core product tile */
+.gs-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  cursor: pointer;
+  text-align: left;
+  transition: none;
+  position: relative;
+}
+
+.gs-card:hover {
+  transform: none;
+  border-color: transparent;
+}
+
+.gs-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #121212;
+  border-radius: 2px;
+}
+
+.gs-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.35s ease, transform 0.6s var(--ease);
+}
+
+/* Primary = model shot, Secondary = alt angle / product */
+.gs-media .gs-img-primary {
+  opacity: 1;
+  z-index: 1;
+}
+
+.gs-media .gs-img-secondary {
+  opacity: 0;
+  z-index: 2;
+}
+
+.gs-card:hover .gs-media .gs-img-primary {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+.gs-card:hover .gs-media .gs-img-secondary {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* Only one image — gentle zoom on hover */
+.gs-media.single .gs-img-primary {
+  opacity: 1 !important;
+}
+
+.gs-card:hover .gs-media.single .gs-img-primary {
+  opacity: 1 !important;
+  transform: scale(1.05);
+}
+
+.gs-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 5;
+  padding: 0.3rem 0.55rem;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.gs-badge.gold {
+  background: var(--gold);
+}
+
+.gs-quick {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s var(--ease);
+}
+
+.gs-card:hover .gs-quick {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gs-quick .btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.gs-quick .btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  filter: none;
+  transform: none;
+}
+
+.gs-info {
+  padding: 0.85rem 0.15rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.gs-info .gs-fit {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.gs-info h3 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.gs-info .gs-color {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.gs-info .gs-price {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 0.15rem;
+  letter-spacing: 0;
+}
+
+.gs-info .gs-price .was {
+  color: var(--text-dim);
+  text-decoration: line-through;
+  font-weight: 500;
+  margin-left: 0.4rem;
+  font-size: 0.82rem;
+}
+
+.gs-info .gs-price .sale {
+  color: var(--gold);
+}
+
+.gs-swatches {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+.gs-swatch-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.gs-swatch-dot.black { background: #111; }
+.gs-swatch-dot.white { background: #f0f0f0; }
+
+/* Horizontal product rail (homepage) */
+.product-rail-section {
+  padding: 3.5rem 0 4rem;
+  background: var(--bg-void);
+}
+
+.rail-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rail-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: 0.05em;
+}
+
+.rail-header a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.rail-header a:hover {
+  border-bottom-color: var(--gold);
+}
+
+.product-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.product-rail .gs-card {
+  scroll-snap-align: start;
+  min-width: 220px;
+}
+
+@media (min-width: 1100px) {
+  .product-rail {
+    grid-auto-flow: unset;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: visible;
+  }
+}
+
+/* Category tiles like Gymshark "Favorites" */
+.cat-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  padding: 2rem 0 4rem;
+}
+
+.cat-tile {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 2px;
+  display: block;
+}
+
+.cat-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.cat-tile:hover img {
+  transform: scale(1.06);
+}
+
+.cat-tile span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1rem 1.25rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+
+@media (max-width: 720px) {
+  .cat-tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gs-quick {
+    opacity: 1;
+    transform: none;
+    position: static;
+    margin-top: 0.5rem;
+  }
+
+  .gs-quick .btn {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--border-gold);
+    box-shadow: none;
+    padding: 0.55rem;
+  }
+}
+
+/* Bundle strip under grid */
+.bundle-strip {
+  margin: 0 0 4rem;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid var(--border-gold);
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), transparent);
+}
+
+.bundle-strip h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+}
+
+.bundle-strip .prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.bundle-strip .now {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--gold);
+}
+
+.bundle-strip .was {
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+
+/* Soften old product-card for compatibility */
+.product-card {
+  border-radius: 2px;
+}
+
+.shop-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1100px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

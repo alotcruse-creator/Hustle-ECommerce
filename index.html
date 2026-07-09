@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div class="announcement-bar">
+      Free checkout on Shopee MY · Pair deal 10% off Black + White
+    </div>
     <!-- NAV -->
     <header class="nav" role="banner">
       <div class="nav-inner">
@@ -113,19 +116,19 @@
     <!-- FEATURED -->
     <section class="section">
       <div class="container">
-        <div class="featured-header reveal">
+        <div class="rail-header reveal">
           <div>
-            <p class="section-label">Featured Collection</p>
-            <h2 class="section-title">OVERSIZED TEE</h2>
-            <p class="muted">Built for the gym. Styled for everyday.</p>
+            <p class="section-label">New In</p>
+            <h2 class="section-title" style="margin:0">OVERSIZED TEE</h2>
+            <p class="muted" style="margin-top:0.5rem">Hover each shot — model to product. Prices under every piece.</p>
           </div>
-          <a href="shop.html" class="btn btn-outline">View All Products</a>
+          <a href="shop.html">View all →</a>
         </div>
 
-        <div class="featured-grid" id="featured-products">
-          <!-- Filled by js/home-app.js from /api/products -->
-          <article class="product-card"><div class="product-card-body"><p class="muted">Loading collection…</p></div></article>
+        <div class="product-rail" id="featured-products">
+          <p class="muted">Loading collection…</p>
         </div>
+        <div id="home-bundle" style="margin-top:2rem"></div>
       </div>
     </section>
 
@@ -229,6 +232,7 @@
 
     <script src="js/config.js"></script>
     <script src="js/catalog.js"></script>
+    <script src="js/product-card.js"></script>
     <script src="js/home-app.js"></script>
     <script src="js/main.js"></script>
   </body>

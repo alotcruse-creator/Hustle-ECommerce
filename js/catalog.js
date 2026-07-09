@@ -25,8 +25,8 @@
       ],
       sizes: ["S", "M", "L", "XL"],
       images: [
-        "assets/products/product-main.jpg",
         "assets/images/hero-male-black.jpg",
+        "assets/products/product-main.jpg",
         "assets/images/logo-detail.jpg",
       ],
       shopeeUrl: "https://shopee.com.my/",
@@ -51,9 +51,9 @@
       ],
       sizes: ["S", "M", "L", "XL"],
       images: [
-        "assets/products/product-main.jpg",
         "assets/images/lifestyle-female-white.jpg",
-        "assets/images/logo-detail.jpg",
+        "assets/products/product-main.jpg",
+        "assets/images/lifestyle-rest.jpg",
       ],
       shopeeUrl: "https://shopee.com.my/",
       featured: true,

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Shop HUSTLE Oversized Tee — 230GSM pure cotton, Black & White. RM39.99 each or 10% off pair bundle. Buy on Shopee Malaysia."
+      content="Shop HUSTLE Oversized Tee — model fit photos, 230GSM pure cotton, Black & White. RM39.99. Buy on Shopee Malaysia."
     />
-    <title>Shop — HUSTLE Oversized Tee</title>
+    <title>Shop — HUSTLE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div class="announcement-bar">
+      Pair deal · Black + White · 10% off on Shopee MY
+    </div>
+
     <header class="nav" role="banner">
       <div class="nav-inner">
         <a href="index.html" class="logo" aria-label="HUSTLE Home">
@@ -34,32 +38,44 @@
       </div>
     </header>
 
-    <section class="page-hero">
-      <div class="container">
-        <p class="section-label">Official Collection</p>
-        <h1>THE SHOP</h1>
-        <p>Premium oversized tees. Checkout securely on Shopee Malaysia.</p>
+    <section class="shop-header">
+      <div class="container shop-header-inner">
+        <div>
+          <p class="section-label">Collection</p>
+          <h1>OVERSIZED TEES</h1>
+          <p>Models in HUSTLE. Hover any product to switch the look. Prices below each shot.</p>
+        </div>
+        <span class="shop-count" id="shop-count">Loading…</span>
       </div>
     </section>
 
-    <!-- PRODUCT CATALOG -->
-    <div class="container" style="padding-top: 3rem">
-      <div id="products-grid" class="shop-grid" style="margin-bottom: 3rem">
+    <div class="container">
+      <div class="shop-toolbar">
+        <div class="shop-filters">
+          <button type="button" class="filter-chip active" data-filter="all">All</button>
+          <button type="button" class="filter-chip" data-filter="black">Black</button>
+          <button type="button" class="filter-chip" data-filter="white">White</button>
+          <button type="button" class="filter-chip" data-filter="tees">Tees</button>
+        </div>
+        <span class="muted" style="font-size: 0.8rem">Hover image · model ↔ product view</span>
+      </div>
+
+      <!-- Gymshark-style product grid: model photo + price; hover swaps image -->
+      <div id="products-grid" class="gs-grid">
         <p class="muted">Loading products…</p>
       </div>
+
+      <div id="bundle-strip" class="bundle-strip" hidden></div>
     </div>
 
-    <div class="container" id="product-detail-root">
-      <!-- Selected product detail filled by shop-app.js -->
-    </div>
+    <div class="container" id="product-detail-root"></div>
 
-    <!-- SIZE CHART -->
     <section class="size-chart-section" id="size-chart">
       <div class="container">
         <div style="text-align: center; margin-bottom: 2rem" class="reveal">
           <p class="section-label">Fit Guide</p>
           <h2 class="section-title">SIZE CHART</h2>
-          <p class="muted">230GSM 100% Cotton · Loose Fit · Measurements in inches</p>
+          <p class="muted">230GSM 100% Cotton · Loose Fit · Inches</p>
         </div>
         <div class="size-chart-wrap reveal">
           <table class="size-chart">
@@ -78,61 +94,31 @@
       </div>
     </section>
 
-    <!-- Lifestyle strip -->
-    <section class="section">
+    <section class="section" style="padding-top: 0">
       <div class="container">
-        <div class="featured-header reveal">
+        <div class="rail-header">
           <div>
-            <p class="section-label">In the Wild</p>
-            <h2 class="section-title">FROM WORKOUT TO WEEKEND</h2>
+            <p class="section-label">On body</p>
+            <h2>TRAIN HARD. LIVE EASY.</h2>
           </div>
         </div>
-        <div class="shop-grid">
-          <article class="product-card reveal">
-            <div class="product-card-img">
-              <img
-                src="assets/images/hero-male-black.jpg"
-                alt="Training in HUSTLE black oversized tee"
-                loading="lazy"
-                width="600"
-                height="800"
-              />
-            </div>
-            <div class="product-card-body">
-              <h3>TRAIN HARD</h3>
-              <p class="product-meta">Heavyweight cotton that holds up under pressure.</p>
-            </div>
-          </article>
-          <article class="product-card reveal">
-            <div class="product-card-img">
-              <img
-                src="assets/images/lifestyle-female-white.jpg"
-                alt="Lifestyle wear HUSTLE white oversized tee"
-                loading="lazy"
-                width="600"
-                height="800"
-              />
-            </div>
-            <div class="product-card-body">
-              <h3>MOVE FREE</h3>
-              <p class="product-meta">Oversized cut. Max comfort. Zero restriction.</p>
-            </div>
-          </article>
-          <article class="product-card reveal">
-            <div class="product-card-img">
-              <img
-                src="assets/images/lifestyle-rest.jpg"
-                alt="Post-workout in HUSTLE oversized tee"
-                loading="lazy"
-                width="600"
-                height="800"
-              />
-            </div>
-            <div class="product-card-body">
-              <h3>LIVE EASY</h3>
-              <p class="product-meta">From the last set to the late night.</p>
-            </div>
-          </article>
+        <div class="cat-tiles">
+          <a href="#products-grid" class="cat-tile">
+            <img src="assets/images/hero-male-black.jpg" alt="Model in black HUSTLE oversized tee" loading="lazy" />
+            <span>BLACK TEE</span>
+          </a>
+          <a href="#products-grid" class="cat-tile">
+            <img src="assets/images/lifestyle-female-white.jpg" alt="Model in white HUSTLE oversized tee" loading="lazy" />
+            <span>WHITE TEE</span>
+          </a>
+          <a href="#products-grid" class="cat-tile">
+            <img src="assets/images/lifestyle-rest.jpg" alt="Post workout lifestyle" loading="lazy" />
+            <span>EVERYDAY</span>
+          </a>
+          <a href="#products-grid" class="cat-tile">
+            <img src="assets/images/logo-detail.jpg" alt="HUSTLE gold logo detail" loading="lazy" />
+            <span>DETAILS</span>
+          </a>
         </div>
       </div>
     </section>
@@ -178,6 +164,7 @@
 
     <script src="js/config.js"></script>
     <script src="js/catalog.js"></script>
+    <script src="js/product-card.js"></script>
     <script src="js/shop-app.js"></script>
     <script src="js/main.js"></script>
   </body>
